@@ -45,6 +45,11 @@ const Bar = () => {
                 Counter
               </NavLink>
             </Nav.Link>
+            <Nav.Link>
+              <NavLink to="/crud" style={style.textDec}>
+                CRUD
+              </NavLink>
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

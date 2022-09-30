@@ -18,30 +18,30 @@ let userSlice = createSlice({
       state.push(newUser);
     },
     deleteUsers: (state, action) => {
-      return state.filter((user) => user.id !== action.payload.id);
+      return state.filter((user) => user.id !== action.payload);
     },
-    updateSelected: (state, action) => {
-      const index = state.findIndex((user) => user.id === action.payload.id);
-      let data = current(state[index]);
-      // console.log(data);
-      const objCopy = { ...data };
-      objCopy.completed = action.payload.completed;
-      // console.log(objCopy);
-      // data.completed = action.payload.completed;
-      // state.map((user) => {
-      //   if (user.id === action.payload.id) {
-      //     return {
-      //       user,
-      //       completed: action.payload.completed,
-      //     };
-      //   }
-      //   return user;
-      // });
-      // console.log(index);
-      // console.log(!action.payload.completed);
-      // state[index].completed = action.payload.completed;
-    },
+    // updateSelected: (state, action) => {
+    //   const index = state.findIndex((user) => user.id === action.payload.id);
+    //   console.log(current(state[index]));
+    //   // console.log(data);
+    //   // const objCopy = { ...data };
+    //   // objCopy.completed = action.payload.completed;
+    //   // console.log(objCopy);
+    //   // data.completed = action.payload.completed;
+    //   // state.map((user) => {
+    //   //   if (user.id === action.payload.id) {
+    //   //     return {
+    //   //       user,
+    //   //       completed: action.payload.completed,
+    //   //     };
+    //   //   }
+    //   //   return user;
+    //   // });
+    //   // console.log(index);
+    //   // console.log(!action.payload.completed);
+    //   // state[index].completed = action.payload.completed;
+    // },
   },
 });
-export const { addUsers, deleteUsers, updateSelected } = userSlice.actions;
+export const { addUsers, deleteUsers } = userSlice.actions;
 export default userSlice.reducer;
