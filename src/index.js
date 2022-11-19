@@ -7,11 +7,15 @@ import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import store from "./redux/store";
 import { Provider } from "react-redux";
 import "antd/dist/antd.css";
+// import { ChakraProvider } from "@chakra-ui/react";
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
 root.render(
+  // <ChakraProvider>
   <BrowserRouter>
     <Provider store={store}>
       <App />
     </Provider>
   </BrowserRouter>
+  // </ChakraProvider>
 );
