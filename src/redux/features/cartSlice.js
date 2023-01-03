@@ -66,8 +66,8 @@ const cartSlice = createSlice({
       );
       // console.log(current(state.cartProducts[findIndex]));
       if (state.cartProducts[Index].cartQuantity >= 1) {
-        state.cartProducts[Index].cartQuantity =
-          state.cartProducts[Index].cartQuantity + 1;
+        state.cartProducts[Index].cartQuantity += 1;
+        // state.cartProducts[Index].cartQuantity + 1;
       }
       toast.success(`${payload.name} quantity increased`, {
         position: "bottom-left",
@@ -86,6 +86,7 @@ const cartSlice = createSlice({
         autoClose: 800,
       });
     },
+
     clearCart: (state) => {
       state.cartProducts = [];
       sessionStorage.setItem("cartItems", JSON.stringify(state.cartProducts));
