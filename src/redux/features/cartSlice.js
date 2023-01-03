@@ -22,6 +22,7 @@ const cartSlice = createSlice({
           `${state.cartProducts[index].name} cart Quantity increased to  ${state.cartProducts[index].cartQuantity} `,
           {
             position: "bottom-left",
+            autoClose: 800,
           }
         );
       } else {
@@ -29,6 +30,7 @@ const cartSlice = createSlice({
         state.cartProducts.push(tempProduct);
         toast.success(`${payload.name} added to a cart`, {
           position: "bottom-left",
+          autoClose: 800,
         });
       }
       sessionStorage.setItem("cartItems", JSON.stringify(state.cartProducts));
@@ -68,6 +70,7 @@ const cartSlice = createSlice({
       }
       toast.success(`${payload.name} quantity increased`, {
         position: "bottom-left",
+        autoClose: 800,
       });
       sessionStorage.setItem("cartItems", JSON.stringify(state.cartProducts));
     },
@@ -79,6 +82,7 @@ const cartSlice = createSlice({
       sessionStorage.setItem("cartItems", JSON.stringify(state.cartProducts));
       toast.error(`${payload.name} has been removed from the cart`, {
         position: "bottom-left",
+        autoClose: 800,
       });
     },
     clearCart: (state) => {
@@ -86,6 +90,7 @@ const cartSlice = createSlice({
       sessionStorage.setItem("cartItems", JSON.stringify(state.cartProducts));
       toast.error(`Cart Cleared`, {
         position: "bottom-left",
+        autoClose: 800,
       });
     },
 

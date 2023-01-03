@@ -26,7 +26,7 @@ const Bar = () => {
   return (
     <Navbar expand="lg" style={{ backgroundColor: "#5c5353", padding: "30px" }}>
       <Container>
-        <Navbar.Brand>
+        <Navbar.Brand style={{ fontSize: "30px" }}>
           {" "}
           <NavLink to="/" style={style.textDec}>
             Online Shop
@@ -34,43 +34,7 @@ const Bar = () => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            {/* <Nav.Link>
-              <NavLink to="/users" style={style.textDec}>
-                Users
-              </NavLink>
-            </Nav.Link>
-            <Nav.Link>
-              <NavLink to="/login" style={style.textDec}>
-                Login
-              </NavLink>
-            </Nav.Link>
-            <Nav.Link>
-              <NavLink to="/signup" style={style.textDec}>
-                Register
-              </NavLink>
-            </Nav.Link>
-            <Nav.Link>
-              <NavLink to="/register" style={style.textDec}>
-                Register Business
-              </NavLink>
-            </Nav.Link>
-            <Nav.Link>
-              <NavLink to="/employees" style={style.textDec}>
-                Employees
-              </NavLink>
-            </Nav.Link>
-            <Nav.Link>
-              <NavLink to="/counter" style={style.textDec}>
-                Counter
-              </NavLink>
-            </Nav.Link>
-            <Nav.Link>
-              <NavLink to="/crud" style={style.textDec}>
-                CRUD
-              </NavLink>
-            </Nav.Link> */}
-          </Nav>
+          <Nav className="me-auto"></Nav>
           <NavLink to="/cart" style={{ color: "#fff" }}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
