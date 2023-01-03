@@ -5,6 +5,7 @@ import { Cart } from "./components/Cart";
 import { Home } from "./components/Home";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { SingleProduct } from "./components/SingleProduct";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/cart" element={<Cart />} />
+        <Route exact path="/products/:productId" element={<SingleProduct />} />
         <Route
           exact
           path="*"

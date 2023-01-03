@@ -5,7 +5,7 @@ import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Spinner from "react-bootstrap/Spinner";
 
 export const Home = () => {
@@ -14,7 +14,7 @@ export const Home = () => {
   const handleToCartItem = (product) => {
     dispatch(addToCart(product));
   };
-  data && console.log(data);
+  // data && console.log(data);
   return (
     <Container fluid style={{ marginTop: "70px" }}>
       {isLoading ? (
@@ -37,12 +37,17 @@ export const Home = () => {
                 <Card.Footer style={{ background: "transparent" }}>
                   ${product.price}
                 </Card.Footer>
-                <Button
-                  variant="primary"
-                  onClick={() => handleToCartItem(product)}
+                <div
+                  style={{ display: "flex", justifyContent: "space-between" }}
                 >
-                  Add to cart
-                </Button>
+                  <Button
+                    variant="primary"
+                    onClick={() => handleToCartItem(product)}
+                  >
+                    Add to cart
+                  </Button>
+                  <Link to={`products/${product.id}`}> View Details</Link>
+                </div>
               </Card.Body>
             </Card>
           ))}
