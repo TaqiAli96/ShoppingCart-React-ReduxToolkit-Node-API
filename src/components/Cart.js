@@ -16,10 +16,11 @@ import { useEffect } from "react";
 export const Cart = () => {
   const cart = useSelector((state) => state.cart);
   const { cartProducts } = cart;
+  console.log(cartProducts);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getTotals());
-  }, [cart]);
+  }, [cart, dispatch]);
   return (
     <Container>
       <h2>Shopping Cart</h2>
@@ -46,7 +47,11 @@ export const Cart = () => {
             {cartProducts?.map((cartProduct) => (
               <tr key={cartProduct.id}>
                 <td>
-                  <img src={cartProduct.image} style={{ height: "50px" }} />
+                  <img
+                    src={cartProduct.image}
+                    alt="cart-product"
+                    style={{ height: "50px" }}
+                  />
                   <span style={{ marginLeft: "10px" }}>{cartProduct.name}</span>
                 </td>
                 <td style={{ padding: "23px" }}>{cartProduct.desc}</td>

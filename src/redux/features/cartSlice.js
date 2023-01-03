@@ -27,6 +27,7 @@ const cartSlice = createSlice({
         );
       } else {
         const tempProduct = { ...payload, cartQuantity: 1 };
+        // console.log("tempproduct=>", tempProduct);
         state.cartProducts.push(tempProduct);
         toast.success(`${payload.name} added to a cart`, {
           position: "bottom-left",
@@ -38,16 +39,16 @@ const cartSlice = createSlice({
 
     decreasedQuantity: (state, { payload }) => {
       // console.log(payload);
-      const findIndex = state.cartProducts.findIndex(
+      const Index = state.cartProducts.findIndex(
         (product) => product.id === payload.id
       );
       // console.log(current(state.cartProducts[findIndex]));
-      if (state.cartProducts[findIndex].cartQuantity > 1) {
-        state.cartProducts[findIndex].cartQuantity -= 1;
+      if (state.cartProducts[Index].cartQuantity > 1) {
+        state.cartProducts[Index].cartQuantity -= 1;
         toast.info(` Decreased ${payload.name} cart quantity`, {
           position: "bottom-left",
         });
-      } else if (state.cartProducts[findIndex].cartQuantity === 1) {
+      } else if (state.cartProducts[Index].cartQuantity === 1) {
         state.cartProducts = state.cartProducts.filter(
           (product) => product.id !== payload.id
         );
@@ -60,13 +61,13 @@ const cartSlice = createSlice({
 
     increasedQuantity: (state, { payload }) => {
       // console.log(payload);
-      const findIndex = state.cartProducts.findIndex(
+      const Index = state.cartProducts.findIndex(
         (product) => product.id === payload.id
       );
       // console.log(current(state.cartProducts[findIndex]));
-      if (state.cartProducts[findIndex].cartQuantity >= 1) {
-        state.cartProducts[findIndex].cartQuantity =
-          state.cartProducts[findIndex].cartQuantity + 1;
+      if (state.cartProducts[Index].cartQuantity >= 1) {
+        state.cartProducts[Index].cartQuantity =
+          state.cartProducts[Index].cartQuantity + 1;
       }
       toast.success(`${payload.name} quantity increased`, {
         position: "bottom-left",

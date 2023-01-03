@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Button, Card, Container } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 import { useGetAllProductsQuery } from "../redux/features/productsApi";
 
 export const SingleProduct = () => {
   const { productId } = useParams();
-  const { data: products, error, isLoading } = useGetAllProductsQuery();
+  const { data: products } = useGetAllProductsQuery();
 
   const singleProduct = products.find((product) => product.id === +productId);
 

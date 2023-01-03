@@ -46,7 +46,7 @@ export const Home = () => {
                   >
                     Add to cart
                   </Button>
-                  <Link to={`products/${product.id}`}> View Details</Link>
+                  <Link to={`products/${product.id}`}>View Details</Link>
                 </div>
               </Card.Body>
             </Card>
