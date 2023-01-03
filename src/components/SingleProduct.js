@@ -6,11 +6,10 @@ import { useGetAllProductsQuery } from "../redux/features/productsApi";
 export const SingleProduct = () => {
   const { productId } = useParams();
   const { data: products } = useGetAllProductsQuery();
-
   const singleProduct = products.find((product) => product.id === +productId);
 
   return (
-    <Container className="d-flex justify-content-around ">
+    <Container className="d-flex justify-content-around mt-5">
       <Card
         style={{ width: "18rem", boxShadow: "2px 2px 2px lightgray" }}
         key={singleProduct.id}

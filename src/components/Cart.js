@@ -17,7 +17,7 @@ import { Card } from "react-bootstrap";
 export const Cart = () => {
   const cart = useSelector((state) => state.cart);
   const { cartProducts } = cart;
-  console.log(cart);
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getTotals());
@@ -99,7 +99,7 @@ export const Cart = () => {
 
       <div style={{ display: "flex", justifyContent: "flex-end" }}>
         <Card style={{ width: "18rem", boxShadow: "2px 2px 2px lightgray" }}>
-          <Card.Title className="p-3">Product Summary</Card.Title>
+          <Card.Title className="p-3">Summary</Card.Title>
           <Card.Body style={{ marginTop: "-20px" }}>
             <Card.Text>Total Products : {cart.cartTotalQuantity}</Card.Text>
             <Card.Text>Total Quantity : {cart.cartTotalAmount}</Card.Text>

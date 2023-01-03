@@ -8,7 +8,7 @@ export const productApi = createApi({
       query: () => `products`,
     }),
     getSingleProduct: builder.query({
-      query: (postId) => `/products/${postId}`,
+      query: (product) => `products/search?q=${product}`,
     }),
   }),
 });
