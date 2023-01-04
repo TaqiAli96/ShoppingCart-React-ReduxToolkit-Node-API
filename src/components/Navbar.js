@@ -12,10 +12,11 @@ const Bar = () => {
   const dispatch = useDispatch();
 
   const { cartTotalQuantity } = useSelector((state) => state.cart);
+
   const cart = useSelector((state) => state.cart);
   useEffect(() => {
     dispatch(getTotals());
-  }, [cart]);
+  }, [cart, dispatch]);
   // console.log(cartTotalQuantity);
   const style = {
     textDec: {
