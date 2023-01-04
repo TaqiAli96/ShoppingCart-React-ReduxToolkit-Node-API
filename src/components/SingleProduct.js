@@ -2,27 +2,7 @@ import React from "react";
 import { Button, Card, Container } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 import { useGetAllProductsQuery } from "../redux/features/productsApi";
-const Products = [
-  { cartQuantity: 1, price: 200 },
-  { cartQuantity: 2, price: 300 },
-  { cartQuantity: 4, price: 500 },
-];
 
-// const grandTotal = Products.reduce(
-//   (item, cartTotal) => {
-//     const { cartQuantity, price } = item;
-//     // const { price, cartQuantity } = cartItem;
-//     const itemTotal = price * cartQuantity;
-//     console.log(itemTotal);
-//     // cartTotal.total += itemTotal; // for grand total
-//     // cartTotal.quantity += cartQuantity;
-//     return cartTotal;
-//   },
-//   {
-//     total: 0,
-//     quantity: 0,
-//   }
-// );
 export const SingleProduct = () => {
   const { productId } = useParams();
   const { data: products } = useGetAllProductsQuery();
